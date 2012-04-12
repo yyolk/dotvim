@@ -1,11 +1,13 @@
-runtime bundle/vim-pathogen/autoload/pathogen.vim
+runtime autoload/pathogen.vim
+
 call pathogen#infect()
 call pathogen#helptags()
 
 
 syntax on
 let g:snipmgr_snippets_dir = $HOME."/.vim/snippets"
-filetype indent plugin on
+"filetype indent plugin on
+filetype plugin indent on
 filetype plugin on
 set smartindent
 set tabstop=4
