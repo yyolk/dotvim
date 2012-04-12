@@ -7,3 +7,9 @@
 [submodule "bundle/zencoding-vim"]
 	path = bundle/zencoding-vim
 	url = https://github.com/mattn/zencoding-vim.git
+[submodule "bundle/vim-endwise"]
+	path = bundle/vim-endwise
+	url = https://github.com/tpope/vim-endwise.git
+[submodule "bundle/browser-refresh.vim"]
+	path = bundle/browser-refresh.vim
+	url = https://github.com/mkitt/browser-refresh.vim.git
