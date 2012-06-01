@@ -1,9 +1,2 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/Volumes/Delta/code/rails/clipboardboard'
-let g:netrw_dirhist_2='/Volumes/Delta/code/rails/clipboardboard/config'
-let g:netrw_dirhist_3='/Volumes/Delta/code/rails/clipboardboard'
-let g:netrw_dirhist_4='/Volumes/Delta/code/rails/clipboardboard.old'
-let g:netrw_dirhist_5='/Volumes/Delta/code/plask/pixelpixel'
-let g:netrw_dirhist_6='/Volumes/Delta/code/ruby/yolkalyzer'
-let g:netrw_dirhist_7='/Volumes/Delta/code/rails/clipboardboard'
+let g:netrw_dirhist_cnt =0
