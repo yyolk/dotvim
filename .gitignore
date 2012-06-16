@@ -1,3 +1,4 @@
 *.swp
 .bzr/
 .DS_Store
+.netrwhist
