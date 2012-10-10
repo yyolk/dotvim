@@ -43,3 +43,9 @@
 [submodule "bundle/vim-css3-syntax"]
 	path = bundle/vim-css3-syntax
 	url = https://github.com/hail2u/vim-css3-syntax.git
+[submodule "bundle/vim-matchit"]
+	path = bundle/vim-matchit
+	url = https://github.com/thisivan/vim-matchit
+[submodule "bundle/cabin-colorscheme"]
+	path = bundle/cabin-colorscheme
+	url = https://github.com/cabin/cabin-colorscheme.git

@@ -27,8 +27,10 @@ set spell
 
 inoremap "<Space>    ""<Left>
 inoremap '<Space>    ''<Left>
-au FocusLost * :wa
+"autowrite on focus lost
+"au FocusLost * :wa
 
-
-
-
+"auto close tag with omnicompletion when '<//' is typed
+iabbrev <// </<C-X><C-O>
+set tw=78
+nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
