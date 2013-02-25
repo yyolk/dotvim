@@ -49,3 +49,6 @@
 [submodule "bundle/cabin-colorscheme"]
 	path = bundle/cabin-colorscheme
 	url = https://github.com/cabin/cabin-colorscheme.git
+[submodule "bundle/vim-jade"]
+	path = bundle/vim-jade
+	url = https://github.com/digitaltoad/vim-jade
