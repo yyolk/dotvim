@@ -79,3 +79,5 @@ inoremap '<Space>    ''<Left>
 iabbrev <// </<C-X><C-O>
 set tw=78
 nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
+"set relativenumber
+set number
