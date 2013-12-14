@@ -23,9 +23,11 @@ Bundle 'mkitt/browser-refresh.vim'
 Bundle 'scrooloose/nerdtree'
 "Bundle 'tpope/vim-rails.git'
 
+
 " vim-scripts repos
 "Bundle 'L9'
 "Bundle 'FuzzyFinder'
+Bundle 'Tabmerge'
 " non-GitHub repos
 "Bundle 'git://git.wincent.com/command-t.git'
 " Git repos on your local machine (i.e. when working on your own plugin)
