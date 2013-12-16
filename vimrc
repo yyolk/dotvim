@@ -21,6 +21,11 @@ Bundle 'tpope/vim-surround'
 Bundle 'molokai'
 Bundle 'mkitt/browser-refresh.vim'
 Bundle 'scrooloose/nerdtree'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'scrooloose/syntastic'
+Bundle 'kien/ctrlp.vim'
+Bundle 'nanotech/jellybeans.vim'
+
 "Bundle 'tpope/vim-rails.git'
 
 
@@ -62,7 +67,8 @@ set showmatch
 set expandtab
 
 
-colorscheme molokai
+"colorscheme molokai
+color jellybeans
 
 "Hide MacVim toolbar by default
 set go-=T
@@ -70,7 +76,20 @@ set ofu=syntaxcomplete#Complete
 setlocal spell spelllang=en_us
 set spell
 
+" NERDTree
+nmap <leader>n :NERDTreeToggle<CR>
+let NERDTreeHighlightCursorline=1
+let NERDTreeIgnore = ['tmp', '.yardoc', 'pkg']
 
+
+" CtrlP
+"nnoremap <silent> t :CtrlP<cr>
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 2
+let g:ctrlp_by_filename = 1
+let g:ctrlp_max_files = 600
+let g:ctrlp_max_depth = 5
 
 inoremap "<Space>    ""<Left>
 inoremap '<Space>    ''<Left>
@@ -83,3 +102,5 @@ set tw=78
 nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
 "set relativenumber
 set number
+
+
