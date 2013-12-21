@@ -25,6 +25,8 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'scrooloose/syntastic'
 Bundle 'kien/ctrlp.vim'
 Bundle 'nanotech/jellybeans.vim'
+Bundle 'editorconfig/editorconfig-vim'
+Bundle 'tomtom/tcomment_vim'
 
 "Bundle 'tpope/vim-rails.git'
 
@@ -90,6 +92,9 @@ let g:ctrlp_working_path_mode = 2
 let g:ctrlp_by_filename = 1
 let g:ctrlp_max_files = 600
 let g:ctrlp_max_depth = 5
+
+"Faster shortcut for commenting. Requires T-Comment
+map <leader>c <c-_><c-_>
 
 inoremap "<Space>    ""<Left>
 inoremap '<Space>    ''<Left>
