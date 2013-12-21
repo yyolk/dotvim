@@ -27,7 +27,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'editorconfig/editorconfig-vim'
 Bundle 'tomtom/tcomment_vim'
-
+Bundle 'terryma/vim-multiple-cursors'
 "Bundle 'tpope/vim-rails.git'
 
 
