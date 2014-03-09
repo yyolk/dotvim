@@ -2,4 +2,4 @@
 .bzr/
 .DS_Store
 .netrwhist
-bundle
+bundle/*
