@@ -2,6 +2,7 @@
 set nocompatible              "be iMproved
 filetype off                  "required!
 
+set rtp+=/usr/local/opt/fzf
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
