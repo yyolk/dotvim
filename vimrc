@@ -3,46 +3,71 @@ set nocompatible              "be iMproved
 filetype off                  "required!
 
 set rtp+=/usr/local/opt/fzf
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 "let Vundle manage Vundle
 ""required! 
-Bundle 'gmarik/vundle'
+"Bundle 'gmarik/vundle'
 
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'tpope/vim-fugitive'
+Plugin 'L9'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plugin 'digitaltoad/vim-jade'
+Plugin 'hallison/vim-markdown'
+Plugin 'tpope/vim-surround'
+Plugin 'molokai'
+Plugin 'mkitt/browser-refresh.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Lokaltog/vim-powerline'
+Plugin 'scrooloose/syntastic'
+Plugin 'kien/ctrlp.vim'
+Plugin 'nanotech/jellybeans.vim'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'terryma/vim-multiple-cursors'
+"Plugin 'tpope/vim-rails.git'
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
 " My bundles here:
 "
 " original repos on GitHub
-Bundle 'tpope/vim-fugitive'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'digitaltoad/vim-jade'
-Bundle 'hallison/vim-markdown'
-Bundle 'tpope/vim-surround'
-Bundle 'molokai'
-Bundle 'mkitt/browser-refresh.vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'scrooloose/syntastic'
-Bundle 'kien/ctrlp.vim'
-Bundle 'nanotech/jellybeans.vim'
-Bundle 'editorconfig/editorconfig-vim'
-Bundle 'tomtom/tcomment_vim'
-Bundle 'terryma/vim-multiple-cursors'
-"Bundle 'tpope/vim-rails.git'
+"Bundle 'tpope/vim-fugitive'
+"Bundle 'Lokaltog/vim-easymotion'
+"Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+"Bundle 'digitaltoad/vim-jade'
+"Bundle 'hallison/vim-markdown'
+"Bundle 'tpope/vim-surround'
+"Bundle 'molokai'
+"Bundle 'mkitt/browser-refresh.vim'
+"Bundle 'scrooloose/nerdtree'
+"Bundle 'Lokaltog/vim-powerline'
+"Bundle 'scrooloose/syntastic'
+"Bundle 'kien/ctrlp.vim'
+"Bundle 'nanotech/jellybeans.vim'
+"Bundle 'editorconfig/editorconfig-vim'
+"Bundle 'tomtom/tcomment_vim'
+"Bundle 'terryma/vim-multiple-cursors'
+"Bundle 'tpope/vim-rails.git' " actually disabled
 
 
 " vim-scripts repos
+"Bundle 'Tabmerge'
 "Bundle 'L9'
 "Bundle 'FuzzyFinder'
-Bundle 'Tabmerge'
 " non-GitHub repos
 "Bundle 'git://git.wincent.com/command-t.git'
 " Git repos on your local machine (i.e. when working on your own plugin)
 "Bundle 'file:///Users/gmarik/path/to/plugin'
 " ...
 
-filetype plugin indent on     " required!
+"filetype plugin indent on     " required!
 "
 " Brief help
 " :BundleList          - list configured bundles
@@ -63,10 +88,8 @@ let g:snipmgr_snippets_dir = $HOME."/.vim/snippets"
 "filetype indent plugin on
 "filetype plugin indent on
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-filetype plugin on
+
+"filetype plugin on
 set smartindent
 set tabstop=4
 set shiftwidth=4
