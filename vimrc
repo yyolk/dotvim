@@ -31,6 +31,7 @@ Plugin 'nanotech/jellybeans.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'wakatime/vim-wakatime'
 "Plugin 'tpope/vim-rails.git'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
