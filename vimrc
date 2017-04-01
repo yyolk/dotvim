@@ -2,9 +2,10 @@
 set nocompatible              "be iMproved
 filetype off                  "required!
 
-set rtp+=/usr/local/opt/fzf
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+"set rtp+=/usr/local/opt/fzf
+"set rtp+=~/.vim/bundle/Vundle.vim
+"call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
 "let Vundle manage Vundle
 ""required! 
@@ -12,30 +13,31 @@ call vundle#begin()
 
 
 " let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+"Plug 'VundleVim/Vundle.vim'
 
-Plugin 'tpope/vim-fugitive'
-Plugin 'L9'
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-Plugin 'digitaltoad/vim-jade'
-Plugin 'hallison/vim-markdown'
-Plugin 'tpope/vim-surround'
-Plugin 'molokai'
-Plugin 'mkitt/browser-refresh.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Lokaltog/vim-powerline'
-Plugin 'scrooloose/syntastic'
-Plugin 'kien/ctrlp.vim'
-Plugin 'nanotech/jellybeans.vim'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'tomtom/tcomment_vim'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'wakatime/vim-wakatime'
-"Plugin 'tpope/vim-rails.git'
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
+Plug 'tpope/vim-fugitive'
+Plug 'L9'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plug 'digitaltoad/vim-jade'
+Plug 'hallison/vim-markdown'
+Plug 'tpope/vim-surround'
+Plug 'molokai'
+Plug 'mkitt/browser-refresh.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'Lokaltog/vim-powerline'
+Plug 'scrooloose/syntastic'
+Plug 'kien/ctrlp.vim'
+Plug 'nanotech/jellybeans.vim'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'tomtom/tcomment_vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'wakatime/vim-wakatime'
+"Plug 'tpope/vim-rails.git'
+" All of your Plugs must be added before the following line
+"call vundle#end()            " required
+call plug#end()
+"filetype Plugin indent on    " required
 " My bundles here:
 "
 " original repos on GitHub
@@ -64,11 +66,11 @@ filetype plugin indent on    " required
 "Bundle 'FuzzyFinder'
 " non-GitHub repos
 "Bundle 'git://git.wincent.com/command-t.git'
-" Git repos on your local machine (i.e. when working on your own plugin)
-"Bundle 'file:///Users/gmarik/path/to/plugin'
+" Git repos on your local machine (i.e. when working on your own Plug)
+"Bundle 'file:///Users/gmarik/path/to/Plug'
 " ...
 
-"filetype plugin indent on     " required!
+"filetype Plug indent on     " required!
 "
 " Brief help
 " :BundleList          - list configured bundles
@@ -86,11 +88,11 @@ filetype plugin indent on    " required
 
 syntax on
 let g:snipmgr_snippets_dir = $HOME."/.vim/snippets"
-"filetype indent plugin on
-"filetype plugin indent on
+"filetype indent Plug on
+"filetype Plug indent on
 
 
-"filetype plugin on
+"filetype Plug on
 set smartindent
 set tabstop=4
 set shiftwidth=4
