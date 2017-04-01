@@ -24,7 +24,11 @@ Plug 'hallison/vim-markdown'
 Plug 'tpope/vim-surround'
 Plug 'molokai'
 Plug 'mkitt/browser-refresh.vim'
-Plug 'scrooloose/nerdtree'
+"Plug 'scrooloose/nerdtree'
+" On-demand loading
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+
 Plug 'Lokaltog/vim-powerline'
 Plug 'scrooloose/syntastic'
 Plug 'kien/ctrlp.vim'
