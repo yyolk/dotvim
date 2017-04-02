@@ -27,6 +27,7 @@ Plug 'mkitt/browser-refresh.vim'
 "Plug 'scrooloose/nerdtree'
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle'}
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 
 Plug 'Lokaltog/vim-powerline'
