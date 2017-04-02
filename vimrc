@@ -1,6 +1,6 @@
 
 set nocompatible              "be iMproved
-filetype off                  "required!
+"filetype off                  "required!
 
 "set rtp+=/usr/local/opt/fzf
 "set rtp+=~/.vim/bundle/Vundle.vim
@@ -141,7 +141,7 @@ inoremap '<Space>    ''<Left>
 "auto close tag with omnicompletion when '<//' is typed
 iabbrev <// </<C-X><C-O>
 set tw=78
-nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
+"nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
 "set relativenumber
 set number
 
