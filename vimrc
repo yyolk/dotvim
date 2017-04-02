@@ -30,7 +30,8 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle'}
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 
-Plug 'Lokaltog/vim-powerline'
+"Plug 'Lokaltog/vim-powerline'
+Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/syntastic'
 Plug 'kien/ctrlp.vim'
 Plug 'nanotech/jellybeans.vim'
