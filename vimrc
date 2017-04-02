@@ -106,6 +106,9 @@ set showmatch
 set expandtab
 
 
+"lightline only appears with vertical split (:vsp)
+set laststatus=2
+
 "colorscheme molokai
 color jellybeans
 
