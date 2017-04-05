@@ -40,6 +40,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'wakatime/vim-wakatime'
+Plug 'derekwyatt/vim-scala'
 "Plug 'tpope/vim-rails.git'
 " All of your Plugs must be added before the following line
 "call vundle#end()            " required
@@ -117,8 +118,10 @@ color jellybeans
 set go-=T
 set ofu=syntaxcomplete#Complete
 setlocal spell spelllang=en_us
-set spell
-
+"set spell
+"autocmd FileType yaml setlocal nospell
+set nospell
+autocmd FileType markdown setlocal spell
 " NERDTree
 nmap <leader>n :NERDTreeToggle<CR>
 let NERDTreeHighlightCursorline=1
