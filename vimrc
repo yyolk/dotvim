@@ -41,6 +41,8 @@ Plug 'tomtom/tcomment_vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'wakatime/vim-wakatime'
 Plug 'derekwyatt/vim-scala'
+Plug 'fatih/vim-go'
+
 "Plug 'tpope/vim-rails.git'
 " All of your Plugs must be added before the following line
 "call vundle#end()            " required
