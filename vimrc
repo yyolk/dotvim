@@ -39,6 +39,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'wakatime/vim-wakatime'
+Plug 'severin-lemaignan/vim-minimap', { 'on': 'Minimap' } 
 "Plug 'tpope/vim-rails.git'
 " All of your Plugs must be added before the following line
 "call vundle#end()            " required
@@ -122,7 +123,8 @@ set spell
 nmap <leader>n :NERDTreeToggle<CR>
 let NERDTreeHighlightCursorline=1
 let NERDTreeIgnore = ['tmp', '.yardoc', 'pkg']
-
+" NERDTree-git show ignored files"
+let g:NERDTreeShowIgnoredStatus = 1
 
 " CtrlP
 "nnoremap <silent> t :CtrlP<cr>
