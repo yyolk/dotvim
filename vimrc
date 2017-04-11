@@ -19,7 +19,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'L9'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
-Plug 'pangloss/vim-javascript'
+"Plug 'pangloss/vim-javascript'
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
 "Plug 'digitaltoad/vim-jade'
 Plug 'hallison/vim-markdown'
