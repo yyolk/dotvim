@@ -20,6 +20,7 @@ Plug 'L9'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plug 'pangloss/vim-javascript'
+Plug 'othree/yajs.vim', { 'for': 'javascript' }
 "Plug 'digitaltoad/vim-jade'
 Plug 'hallison/vim-markdown'
 Plug 'tpope/vim-surround'
@@ -143,8 +144,8 @@ let g:ctrlp_max_depth = 5
 "Faster shortcut for commenting. Requires T-Comment
 map <leader>c <c-_><c-_>
 
-inoremap "<Space>    ""<Left>
-inoremap '<Space>    ''<Left>
+"inoremap "<Space>    ""<Left>
+"inoremap '<Space>    ''<Left>
 "autowrite on focus lost
 "au FocusLost * :wa
 
