@@ -44,6 +44,7 @@ Plug 'wakatime/vim-wakatime'
 Plug 'severin-lemaignan/vim-minimap', { 'on': 'Minimap' } 
 Plug 'derekwyatt/vim-scala'
 Plug 'fatih/vim-go'
+Plug 'mattn/emmet-vim'
 "Plug 'tpope/vim-rails.git'
 " All of your Plugs must be added before the following line
 "call vundle#end()            " required
