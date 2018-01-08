@@ -16,7 +16,7 @@ call plug#begin('~/.vim/plugged')
 "Plug 'VundleVim/Vundle.vim'
 
 Plug 'tpope/vim-fugitive'
-Plug 'L9'
+"Plug 'L9'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
 "Plug 'pangloss/vim-javascript'
@@ -24,7 +24,7 @@ Plug 'othree/yajs.vim', { 'for': 'javascript' }
 "Plug 'digitaltoad/vim-jade'
 Plug 'hallison/vim-markdown'
 Plug 'tpope/vim-surround'
-Plug 'molokai'
+"Plug 'molokai'
 Plug 'mkitt/browser-refresh.vim'
 "Plug 'scrooloose/nerdtree'
 " On-demand loading
