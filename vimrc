@@ -145,6 +145,12 @@ let g:ctrlp_by_filename = 1
 let g:ctrlp_max_files = 600
 let g:ctrlp_max_depth = 5
 
+
+"emmet enable all modes
+let g:user_emmet_mode='n'    "only enable normal mode functions.
+let g:user_emmet_mode='inv'  "enable all functions, which is equal to
+let g:user_emmet_mode='a'    "enable all function in all mode.
+
 "Faster shortcut for commenting. Requires T-Comment
 map <leader>c <c-_><c-_>
 
@@ -159,5 +165,5 @@ set tw=78
 "nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
 "set relativenumber
 set number
-
+set clipboard=unnamed "share system clipboard
 
