@@ -1,4 +1,3 @@
-
 set nocompatible              "be iMproved
 "filetype off                  "required!
 
@@ -49,6 +48,11 @@ Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all' }
 "Plug 'junegunn/fzf', {'dir': '/usr/local/opt/fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 "Plug 'tpope/vim-rails.git'
+Plug 'hashivim/vim-consul'
+Plug 'hashivim/vim-terraform'
+Plug 'hashivim/vim-packer'
+Plug 'ajh17/vim-fist'
+Plug 'digitalrounin/vim-yaml-folds'
 " All of your Plugs must be added before the following line
 "call vundle#end()            " required
 call plug#end()
@@ -165,5 +169,22 @@ set tw=78
 "nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
 "set relativenumber
 set number
-set clipboard=unnamed "share system clipboard
+"set clipboard=unnamed "share system clipboard
+
+"hashivim configs
+
+"Allow vim-terraform to override your .vimrc indentation syntax for matching files. Defaults to 0 which is off.
+let g:terraform_align=1
+"ALlow vim-terraform to automatically fold (hide until unfolded) sections of terraform code. Defaults to 0 which is off.
+let g:terraform_fold_sections=1
+"Allow vim-terraform to re-map the spacebar to fold/unfold.
+let g:terraform_remap_spacebar=1
+
+
+"folding
+"Here is an alternative procedure: In normal mode, press Space to toggle the current fold open/closed. 
+"However, if the cursor is not in a fold, move to the right (the default behavior). In addition, with the manual fold method, you can create a fold by visually selecting some lines, then pressing Space.
+
+nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
+vnoremap <Space> zf
 
