@@ -53,6 +53,8 @@ Plug 'hashivim/vim-terraform'
 Plug 'hashivim/vim-packer'
 Plug 'ajh17/vim-fist'
 Plug 'digitalrounin/vim-yaml-folds'
+Plug 'brooth/far.vim'
+Plug 'pearofducks/ansible-vim'
 " All of your Plugs must be added before the following line
 "call vundle#end()            " required
 call plug#end()
