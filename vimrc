@@ -55,6 +55,7 @@ Plug 'ajh17/vim-fist'
 Plug 'digitalrounin/vim-yaml-folds'
 Plug 'brooth/far.vim'
 Plug 'pearofducks/ansible-vim'
+Plug 'junegunn/vim-easy-align'
 " All of your Plugs must be added before the following line
 "call vundle#end()            " required
 call plug#end()
@@ -189,4 +190,10 @@ let g:terraform_remap_spacebar=1
 
 nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
 vnoremap <Space> zf
+
+"vim-easy-align mappings
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 
