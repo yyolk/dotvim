@@ -55,6 +55,8 @@ set shiftwidth=4
 set showmatch
 set expandtab
 
+" 
+" many thanks Steven K :)
 "give me a login
 set shell=bash
 
