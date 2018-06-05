@@ -55,6 +55,20 @@ set shiftwidth=4
 set showmatch
 set expandtab
 
+"crosshairs
+set cursorline
+set cursorcolumn
+
+"wildmenu
+set wildmenu "enable ctrl-n and ctrl-p to scroll thru matches
+set wildmode=list:longest,full
+set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
+set wildignore+=DS_Store
+set wildignore+=*.png,*.jpg,*.gif
+
+set pumheight=10
+" https://stackoverflow.com/questions/16902317/vim-slow-with-ruby-syntax-highlighting
+set re=1
 
 "lightline only appears with vertical split (:vsp)
 set laststatus=2
@@ -73,7 +87,7 @@ autocmd FileType markdown setlocal spell
 " NERDTree
 nmap <leader>n :NERDTreeToggle<CR>
 let NERDTreeHighlightCursorline=1
-let NERDTreeIgnore = ['tmp', '.yardoc', 'pkg']
+let NERDTreeIgnore = ['.yardoc', 'pkg']
 " NERDTree-git show ignored files"
 let g:NERDTreeShowIgnoredStatus = 1
 
