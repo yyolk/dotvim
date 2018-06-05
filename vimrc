@@ -55,6 +55,9 @@ set shiftwidth=4
 set showmatch
 set expandtab
 
+"give me a login
+set shell=bash
+
 "crosshairs
 set cursorline
 set cursorcolumn
