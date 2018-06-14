@@ -49,6 +49,7 @@ call plug#end()
 "You can revert the settings after the call. e.g. filetype indent off, syntax off, etc.
 let g:snipmgr_snippets_dir = $HOME."/.vim/snippets"
 
+set scrolloff=99
 set smartindent
 set tabstop=4
 set shiftwidth=4
