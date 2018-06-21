@@ -44,6 +44,8 @@ Plug 'digitalrounin/vim-yaml-folds'
 Plug 'brooth/far.vim'
 Plug 'pearofducks/ansible-vim'
 Plug 'junegunn/vim-easy-align'
+Plug 'chr4/nginx.vim'
+Plug 'hjson/vim-hjson'
 call plug#end()
 "Automatically executes filetype plugin indent on and syntax enable. 
 "You can revert the settings after the call. e.g. filetype indent off, syntax off, etc.
