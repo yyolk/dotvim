@@ -47,6 +47,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'chr4/nginx.vim'
 Plug 'hjson/vim-hjson'
 Plug 'leafgarland/typescript-vim'
+Plug 'davidhalter/jedi-vim'
 call plug#end()
 "Automatically executes filetype plugin indent on and syntax enable. 
 "You can revert the settings after the call. e.g. filetype indent off, syntax off, etc.
