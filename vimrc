@@ -21,7 +21,7 @@ Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 
 "Plug 'Lokaltog/vim-powerline'
 Plug 'itchyny/lightline.vim'
-Plug 'scrooloose/syntastic'
+Plug 'vim-syntastic/syntastic'
 Plug 'kien/ctrlp.vim'
 Plug 'nanotech/jellybeans.vim'
 Plug 'editorconfig/editorconfig-vim'
@@ -109,7 +109,7 @@ setlocal spell spelllang=en_us
 set nospell
 autocmd FileType markdown setlocal spell
 " NERDTree
-nmap <leader>n :NERDTreeToggle<CR>
+nmap <leader>N :NERDTreeToggle<CR>
 let NERDTreeHighlightCursorline=1
 let NERDTreeIgnore = ['.yardoc', 'pkg']
 " NERDTree-git show ignored files"
@@ -145,6 +145,10 @@ set tw=78
 "set relativenumber
 set number
 "set clipboard=unnamed "share system clipboard
+nmap <F1> :set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
+imap <F1> <Esc>:set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
+nmap <F2> :.w !pbcopy<CR><CR>
+vmap <F2> :w !pbcopy<CR><CR>
 
 "hashivim configs
 
