@@ -112,7 +112,7 @@ autocmd FileType markdown setlocal spell
 " NERDTree
 nmap <leader>N :NERDTreeToggle<CR>
 let NERDTreeHighlightCursorline=1
-let NERDTreeIgnore = ['.yardoc', 'pkg']
+let NERDTreeIgnore = ['.yardoc', 'pkg', '__pycache__']
 " NERDTree-git show ignored files"
 let g:NERDTreeShowIgnoredStatus = 1
 
