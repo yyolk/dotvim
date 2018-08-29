@@ -142,7 +142,28 @@ map <leader>c <c-_><c-_>
 
 "auto close tag with omnicompletion when '<//' is typed
 iabbrev <// </<C-X><C-O>
-set tw=78
+set tw=79
+""" from: https://realpython.com/vim-and-python-a-match-made-in-heaven/
+"au BufNewFile,BufRead *.py
+"    \ set tabstop=4
+"    \ set softtabstop=4
+"    \ set shiftwidth=4
+"    \ set textwidth=79
+"    \ set expandtab
+"    \ set autoindent
+"    \ set fileformat=unix
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_python_checkers = ['pep8']
+
+
 "nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
 "set relativenumber
 set number
