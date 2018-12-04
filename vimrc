@@ -21,7 +21,7 @@ Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 
 "Plug 'Lokaltog/vim-powerline'
 Plug 'itchyny/lightline.vim'
-Plug 'vim-syntastic/syntastic'
+"Plug 'vim-syntastic/syntastic'
 Plug 'kien/ctrlp.vim'
 Plug 'nanotech/jellybeans.vim'
 Plug 'editorconfig/editorconfig-vim'
@@ -50,6 +50,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'davidhalter/jedi-vim'
 Plug 'integralist/vim-mypy'
 Plug 'jparise/vim-graphql'
+Plug 'w0rp/ale'
 call plug#end()
 "Automatically executes filetype plugin indent on and syntax enable. 
 "You can revert the settings after the call. e.g. filetype indent off, syntax off, etc.
@@ -157,11 +158,11 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_python_checkers = ['pep8']
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+"let g:syntastic_python_checkers = ['pep8']
 
 
 "nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
