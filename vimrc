@@ -52,6 +52,8 @@ Plug 'integralist/vim-mypy'
 Plug 'jparise/vim-graphql'
 Plug 'w0rp/ale'
 Plug 'itspriddle/vim-marked'
+"Plug 'plytophogy/vim-virtualenv'
+"Plug 'PieterjanMontens/vim-pipenv'
 call plug#end()
 "Automatically executes filetype plugin indent on and syntax enable. 
 "You can revert the settings after the call. e.g. filetype indent off, syntax off, etc.
