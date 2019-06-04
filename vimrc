@@ -52,6 +52,7 @@ Plug 'integralist/vim-mypy'
 Plug 'jparise/vim-graphql'
 Plug 'w0rp/ale'
 Plug 'itspriddle/vim-marked'
+Plug 'python/black'
 "Plug 'plytophogy/vim-virtualenv'
 "Plug 'PieterjanMontens/vim-pipenv'
 call plug#end()
