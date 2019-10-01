@@ -2,6 +2,12 @@ set nocompatible              "be iMproved
 
 call plug#begin('~/.vim/plugged')
 
+
+" Smart auto-indentation for Python
+Plug 'vim-scripts/indentpython.vim'
+" Auto-completing engine
+Plug 'Valloric/YouCompleteMe', {'do': 'python3 install.py --clang-completer'}
+
 Plug 'tpope/vim-fugitive'
 "Plug 'L9'
 Plug 'Lokaltog/vim-easymotion'
@@ -20,15 +26,25 @@ Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle'}
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 
 "Plug 'Lokaltog/vim-powerline'
-Plug 'itchyny/lightline.vim'
-"Plug 'vim-syntastic/syntastic'
+" Plug 'itchyny/lightline.vim'
+Plug 'vim-airline/vim-airline'
+" Awesome staring screen for Vim
+Plug 'mhinz/vim-startify'
+
+" Search bar
+Plug 'kien/ctrlp.vim'
+
+Plug 'vim-syntastic/syntastic'
+" Python backend for 'syntastic'
+Plug 'nvie/vim-flake8'
+
 Plug 'kien/ctrlp.vim'
 Plug 'nanotech/jellybeans.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'wakatime/vim-wakatime'
-Plug 'severin-lemaignan/vim-minimap', { 'on': 'Minimap' } 
+" Plug 'severin-lemaignan/vim-minimap', { 'on': 'Minimap' } 
 Plug 'derekwyatt/vim-scala'
 Plug 'fatih/vim-go'
 Plug 'mattn/emmet-vim'
@@ -48,11 +64,14 @@ Plug 'chr4/nginx.vim'
 Plug 'hjson/vim-hjson'
 Plug 'leafgarland/typescript-vim'
 Plug 'davidhalter/jedi-vim'
-Plug 'integralist/vim-mypy'
+" Plug 'integralist/vim-mypy'
 Plug 'jparise/vim-graphql'
-Plug 'w0rp/ale'
+" Plug 'w0rp/ale'
 Plug 'itspriddle/vim-marked'
 Plug 'python/black'
+" Rich python syntax highlighting
+Plug 'kh3phr3n/python-syntax'
+
 "Plug 'plytophogy/vim-virtualenv'
 "Plug 'PieterjanMontens/vim-pipenv'
 call plug#end()
@@ -88,21 +107,24 @@ set pumheight=10
 set re=1
 
 "lightline only appears with vertical split (:vsp)
-set laststatus=2
-let g:lightline = {
-      \ 'component_function': {
-      \   'filename': 'LightlineFilename',
-      \ }
-      \ }
+" set laststatus=2
+" let g:lightline = {
+"       \ 'component_function': {
+"       \   'filename': 'LightlineFilename',
+"       \ }
+"       \ }
+"
+" function! LightlineFilename()
+"     let root = fnamemodify(get(b:, 'git_dir'), ':h')
+"     let path = expand('%:p')
+"     if path[:len(root)-1] ==#root
+"         return path[len(root)+1:]
+"     endif
+"     return expand('%')
+" endfunction
+"
 
-function! LightlineFilename()
-    let root = fnamemodify(get(b:, 'git_dir'), ':h')
-    let path = expand('%:p')
-    if path[:len(root)-1] ==#root
-        return path[len(root)+1:]
-    endif
-    return expand('%')
-endfunction
+let g:jedi#force_py_version=3
 
 "colorscheme molokai
 color jellybeans
@@ -140,10 +162,10 @@ let g:user_emmet_mode='a'    "enable all function in all mode.
 "Faster shortcut for commenting. Requires T-Comment
 map <leader>c <c-_><c-_>
 
-"inoremap "<Space>    ""<Left>
-"inoremap '<Space>    ''<Left>
-"autowrite on focus lost
-"au FocusLost * :wa
+" inoremap \"<Space>    \""<Left>
+" inoremap '<Space>    ''<Left>
+" autowrite on focus lost
+" au FocusLost * :wa
 
 "auto close tag with omnicompletion when '<//' is typed
 iabbrev <// </<C-X><C-O>
@@ -168,6 +190,27 @@ set statusline+=%*
 "let g:syntastic_check_on_wq = 0
 "let g:syntastic_python_checkers = ['pep8']
 
+
+" pipenv via: https://y.yolk.cc/2p32Kmw
+" Point YCM to the Pipenv created virtualenv, if possible
+" At first, get the output of 'pipenv --venv' command.
+" let pipenv_venv_path = system('pipenv --venv')
+let current_python = substitute(system('which python'), '\n', '', '')
+let g:ycm_server_python_interpreter = current_python
+" The above system() call produces a non zero exit code whenever
+" a proper virtual environment has not been found.
+" So, second, we only point YCM to the virtual environment when
+" the call to 'pipenv --venv' was successful.
+" Remember, that 'pipenv --venv' only points to the root directory
+" of the virtual environment, so we have to append a full path to
+" the python executable.
+if shell_error == 0
+  " let venv_path = substitute(pipenv_venv_path, '\n', '', '')
+  " let g:ycm_python_binary_path = venv_path . '/bin/python'
+  let g:ycm_python_binary_path = current_python
+else
+  let g:ycm_python_binary_path = 'python'
+endif
 
 "nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
 "set relativenumber
