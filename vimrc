@@ -68,12 +68,16 @@ Plug 'davidhalter/jedi-vim'
 Plug 'jparise/vim-graphql'
 " Plug 'w0rp/ale'
 Plug 'itspriddle/vim-marked'
-Plug 'python/black'
+" Plug 'psf/black', { 'tag': '19.10b0' }
+Plug 'psf/black', { 'tag': '*' }
 " Rich python syntax highlighting
 Plug 'kh3phr3n/python-syntax'
 
 "Plug 'plytophogy/vim-virtualenv'
 "Plug 'PieterjanMontens/vim-pipenv'
+"
+Plug 'vim-scripts/project.tar.gz'
+Plug 'cespare/vim-toml'
 call plug#end()
 "Automatically executes filetype plugin indent on and syntax enable. 
 "You can revert the settings after the call. e.g. filetype indent off, syntax off, etc.
