@@ -38,7 +38,6 @@ Plug 'vim-syntastic/syntastic'
 " Python backend for 'syntastic'
 Plug 'nvie/vim-flake8'
 
-Plug 'kien/ctrlp.vim'
 Plug 'nanotech/jellybeans.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tomtom/tcomment_vim'
@@ -49,6 +48,7 @@ Plug 'derekwyatt/vim-scala'
 Plug 'fatih/vim-go'
 Plug 'mattn/emmet-vim'
 Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all' }
+" Compile from source..
 "Plug 'junegunn/fzf', {'dir': '/usr/local/opt/fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 "Plug 'tpope/vim-rails.git'
@@ -78,6 +78,7 @@ Plug 'kh3phr3n/python-syntax'
 "
 Plug 'vim-scripts/project.tar.gz'
 Plug 'cespare/vim-toml'
+Plug 'valloric/MatchTagAlways'
 call plug#end()
 "Automatically executes filetype plugin indent on and syntax enable. 
 "You can revert the settings after the call. e.g. filetype indent off, syntax off, etc.
@@ -144,9 +145,9 @@ autocmd FileType markdown setlocal spell
 " NERDTree
 nmap <leader>N :NERDTreeToggle<CR>
 let NERDTreeHighlightCursorline=1
-let NERDTreeIgnore = ['.yardoc', 'pkg', '__pycache__']
+let NERDTreeIgnore = ['.yardoc', 'pkg', '__pycache__', '.ipython']
 " NERDTree-git show ignored files"
-let g:NERDTreeShowIgnoredStatus = 1
+" let g:NERDTreeShowIgnoredStatus = 1
 
 " CtrlP
 "nnoremap <silent> t :CtrlP<cr>
