@@ -6,7 +6,7 @@ call plug#begin('~/.vim/plugged')
 " Smart auto-indentation for Python
 Plug 'vim-scripts/indentpython.vim'
 " Auto-completing engine
-Plug 'Valloric/YouCompleteMe', {'do': 'python3 install.py --clang-completer'}
+Plug 'ycm-core/YouCompleteMe', {'do': 'python3 install.py --clang-completer'}
 
 Plug 'tpope/vim-fugitive'
 "Plug 'L9'
