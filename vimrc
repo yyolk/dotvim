@@ -15,7 +15,9 @@ Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
 "Plug 'pangloss/vim-javascript'
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
 "Plug 'digitaltoad/vim-jade'
-Plug 'hallison/vim-markdown'
+" Plug 'hallison/vim-markdown'
+Plug 'godlygeek/tabular' 
+Plug 'plasticboy/vim-markdown'
 Plug 'tpope/vim-surround'
 "Plug 'molokai'
 Plug 'mkitt/browser-refresh.vim'
