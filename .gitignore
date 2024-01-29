@@ -6,3 +6,4 @@ bundle/*
 autoload/*
 plugged/*
 black/*
+*.spl
