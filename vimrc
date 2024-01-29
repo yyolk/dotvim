@@ -138,12 +138,24 @@ call plug#end()
 " "You can revert the settings after the call. e.g. filetype indent off, syntax off, etc.
 " let g:snipmgr_snippets_dir = $HOME."/.vim/snippets"
 
+" set up whitespace, default tabs
 set scrolloff=99
 set smartindent
 set tabstop=4
 set shiftwidth=4
 set showmatch
 set expandtab
+
+set tw=79
+""" from: https://realpython.com/vim-and-python-a-match-made-in-heaven/
+"au BufNewFile,BufRead *.py
+"    \ set tabstop=4
+"    \ set softtabstop=4
+"    \ set shiftwidth=4
+"    \ set textwidth=79
+"    \ set expandtab
+"    \ set autoindent
+"    \ set fileformat=unix
 
 " 
 " many thanks Steven K :)
@@ -193,11 +205,14 @@ color jellybeans
 "Hide MacVim toolbar by default
 set go-=T
 "set ofu=syntaxcomplete#Complete
+
 setlocal spell spelllang=en_us
-"set spell
+"set spell to off by default
 "autocmd FileType yaml setlocal nospell
 set nospell
+"set spell on when editing markdown
 autocmd FileType markdown setlocal spell
+
 " NERDTree
 nmap <leader>N :NERDTreeToggle<CR>
 let NERDTreeHighlightCursorline=1
@@ -230,16 +245,6 @@ map <leader>c <c-_><c-_>
 
 "auto close tag with omnicompletion when '<//' is typed
 " iabbrev <// </<C-X><C-O>
-set tw=79
-""" from: https://realpython.com/vim-and-python-a-match-made-in-heaven/
-"au BufNewFile,BufRead *.py
-"    \ set tabstop=4
-"    \ set softtabstop=4
-"    \ set shiftwidth=4
-"    \ set textwidth=79
-"    \ set expandtab
-"    \ set autoindent
-"    \ set fileformat=unix
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
