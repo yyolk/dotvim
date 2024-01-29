@@ -202,6 +202,11 @@ set cursorcolumn
 " My preffered colorscheme
 color jellybeans
 
+set colorcolumn=80
+"highlight ColorColumn ctermbg=8
+highlight ColorColumn ctermbg=234 guibg=#262626
+
+
 "Hide MacVim toolbar by default
 set go-=T
 "set ofu=syntaxcomplete#Complete
