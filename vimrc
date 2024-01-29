@@ -204,7 +204,8 @@ color jellybeans
 
 set colorcolumn=80
 "highlight ColorColumn ctermbg=8
-highlight ColorColumn ctermbg=234 guibg=#262626
+"highlight ColorColumn ctermbg=234 guibg=#262626
+highlight ColorColumn ctermbg=234 guibg=#eaeaea
 
 
 "Hide MacVim toolbar by default
