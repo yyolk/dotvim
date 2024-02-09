@@ -344,32 +344,38 @@ set backspace=indent,eol,start
 let lspOpts = #{autoHighlightDiags: v:true}
 autocmd VimEnter * call LspOptionsSet(lspOpts)
 
-let lspServers = [#{
-	\	name: 'pylsp',
-	\	filetype: 'python',
-	\	path: '/Users/yolk/.pyenv/shims/pylsp',
-	\	args: []
-	\	},
-	\	#{
+" let lspServers = [#{
+" 	\	name: 'pylsp',
+" 	\	filetype: 'python',
+" 	\	path: '/Users/yolk/.pyenv/shims/pylsp',
+" 	\	args: []
+" 	\	},
+"   \ #{
+let lspServers = []
+call add(lspServers, #{
 	\	name: 'pyright',
 	\	filetype: 'python',
-	\	path: '/Users/yolk/.nvm/versions/node/v21.6.1/bin/pyright',
+	\	path: '/Users/yolk/.nvm/versions/node/v21.6.1/bin/pyright-langserver',
 	\	args: ['--stdio'],
 	\	workspaceConfig: #{
 	\	python:	#{
 	\		pythonPath: '/Users/yolk/.pyenv/shims/python'
 	\	}}
-	\	},
-  \ #{
+	\	})
+	" \	}]
+" lspServers += [#{
+call add(lspServers, #{
   \ name: 'emmet',
   \ filetype: 'html',
   \ path: '/Users/yolk/.nvm/versions/node/v21.6.1/bin/emmet-language-server',
   \ args: ['--stdio'],
-  \}]
+  \})
+  " \}]
 autocmd VimEnter * call LspAddServer(lspServers)
 
-nmap <leader>d :LspPeekDefinition<CR>
-nmap <leader>D :LspGotoDefinition<CR>
-nmap <leader>o :LspOutline<CR>
-nmap <leader>H :LspHover<CR>
-nmap <leader>T :LspGotoTypeDef<CR>
+nnoremap <leader>d :LspPeekDefinition<CR>
+nnoremap <leader>D :LspGotoDefinition<CR>
+nnoremap <leader>o :LspOutline<CR>
+nnoremap <leader>h :LspDiag here<CR>
+nnoremap <leader>H :LspHover<CR>
+nnoremap <leader>T :LspGotoTypeDef<CR>
