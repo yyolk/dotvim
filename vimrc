@@ -254,9 +254,9 @@ nnoremap <C-f> :NERDTreeFind<CR>
 
 
 "emmet enable all modes
-let g:user_emmet_mode='n'    "only enable normal mode functions.
-let g:user_emmet_mode='inv'  "enable all functions, which is equal to
-let g:user_emmet_mode='a'    "enable all function in all mode.
+" let g:user_emmet_mode='n'    "only enable normal mode functions.
+" let g:user_emmet_mode='inv'  "enable all functions, which is equal to
+" let g:user_emmet_mode='a'    "enable all function in all mode.
 
 "Faster shortcut for commenting. Requires T-Comment
 map <leader>c <c-_><c-_>
@@ -269,9 +269,9 @@ map <leader>c <c-_><c-_>
 "auto close tag with omnicompletion when '<//' is typed
 " iabbrev <// </<C-X><C-O>
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
 "let g:syntastic_always_populate_loc_list = 1
 "let g:syntastic_auto_loc_list = 1
