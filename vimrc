@@ -109,10 +109,6 @@ Plug 'wakatime/vim-wakatime'
 "Plug 'ajh17/vim-fist'
 "Possible obsolete with LSP
 "Plug 'digitalrounin/vim-yaml-folds'
-Plug 'brooth/far.vim'
-Plug 'junegunn/vim-easy-align'
-Plug 'chr4/nginx.vim'
-Plug 'hjson/vim-hjson'
 " LSP makes obsolete
 " Plug 'leafgarland/typescript-vim'
 " LSP makes obsolete
@@ -125,9 +121,12 @@ Plug 'hjson/vim-hjson'
 " dense-analysis/ale is the new one I think
 " Only works with Marked.app, if it is installed, can be set to another app
 " Plug 'itspriddle/vim-marked'
+" Find and replace
+" Plug 'brooth/far.vim'
+" Easy align, gaip=
+" Plug 'junegunn/vim-easy-align'
 
-" Plug 'psf/black', { 'tag': '19.10b0' }
-Plug 'psf/black', { 'tag': '*' }
+Plug 'psf/black', { 'branch': 'stable' }
 
 " Obsolete for LSP / ALE
 " Rich python syntax highlighting
@@ -142,6 +141,9 @@ Plug 'cespare/vim-toml'
 
 Plug 'yegappan/lsp'
 
+" Probably obsolete
+" Plug 'chr4/nginx.vim'
+" Plug 'hjson/vim-hjson'
 call plug#end()
 " I don't use snipmgr anymore
 " "Automatically executes filetype plugin indent on and syntax enable. 
@@ -170,7 +172,7 @@ set tw=79
 " 
 " many thanks Steven K :)
 "give me a login
-set shell=bash
+" set shell=bash
 
 "crosshairs
 set cursorline
