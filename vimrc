@@ -232,11 +232,16 @@ set nospell
 autocmd FileType markdown setlocal spell
 
 " NERDTree
-nmap <leader>N :NERDTreeToggle<CR>
-let NERDTreeHighlightCursorline=1
-let NERDTreeIgnore = ['.yardoc', 'pkg', '__pycache__', '.ipython']
+" nmap <leader>N :NERDTreeToggle<CR>
+" let NERDTreeHighlightCursorline=1
+" let NERDTreeIgnore = ['.yardoc', 'pkg', '__pycache__', '.ipython']
 " NERDTree-git show ignored files"
 " let g:NERDTreeShowIgnoredStatus = 1
+" NERDTree 2024
+nnoremap <leader>N :NERDTreeFocus<CR>
+" nnoremap <C-n> :NERDTree<CR>
+" nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
 
 " " CtrlP
 " "nnoremap <silent> t :CtrlP<cr>
