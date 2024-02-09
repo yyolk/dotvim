@@ -45,11 +45,19 @@ Plug 'tpope/vim-surround'
 
 " Probably don't need
 " Plug 'mkitt/browser-refresh.vim'
-"Plug 'scrooloose/nerdtree'
+" Make nerdtree, nerdtree-git-plugin and vim-devicons work together
+" Plug 'preservim/nerdtree' |
+"   \ Plug 'Xuyuanp/nerdtree-git-plugin' |
+"   \ Plug 'ryanoasis/vim-devicons'
+Plug 'preservim/nerdtree' |
+  \ Plug 'Xuyuanp/nerdtree-git-plugin'
 " On-demand loading
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle'}
+" Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
+" Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle'}
 " Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+
+" Nerdfont / VimDevIcons
+" Plug 'ryanoasis/vim-devicons'
 
 "Plug 'Lokaltog/vim-powerline'
 " Plug 'itchyny/lightline.vim'
