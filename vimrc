@@ -48,11 +48,12 @@ Plug 'tpope/vim-surround'
 " Probably don't need
 " Plug 'mkitt/browser-refresh.vim'
 " Make nerdtree, nerdtree-git-plugin and vim-devicons work together
-" Plug 'preservim/nerdtree' |
-"   \ Plug 'Xuyuanp/nerdtree-git-plugin' |
-"   \ Plug 'ryanoasis/vim-devicons'
+" Note: FYI Blex Mono is the patched NerdFont for IBM Plex Mono
 Plug 'preservim/nerdtree' |
-  \ Plug 'Xuyuanp/nerdtree-git-plugin'
+  \ Plug 'Xuyuanp/nerdtree-git-plugin' |
+  \ Plug 'ryanoasis/vim-devicons'
+" Plug 'preservim/nerdtree' |
+"   \ Plug 'Xuyuanp/nerdtree-git-plugin'
 " On-demand loading
 " Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 " Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle'}
