@@ -344,35 +344,173 @@ set backspace=indent,eol,start
 " LSP Servers and config
 " this is a placeholder, as this is the same as the default option
 let lspOpts = #{autoHighlightDiags: v:true}
-autocmd VimEnter * call LspOptionsSet(lspOpts)
-
-" let lspServers = [#{
-" 	\	name: 'pylsp',
-" 	\	filetype: 'python',
-" 	\	path: '/Users/yolk/.pyenv/shims/pylsp',
-" 	\	args: []
-" 	\	},
-"   \ #{
 let lspServers = []
-call add(lspServers, #{
-	\	name: 'pyright',
-	\	filetype: 'python',
-	\	path: '/Users/yolk/.nvm/versions/node/v21.6.1/bin/pyright-langserver',
-	\	args: ['--stdio'],
-	\	workspaceConfig: #{
-	\	python:	#{
-	\		pythonPath: '/Users/yolk/.pyenv/shims/python'
-	\	}}
-	\	})
-	" \	}]
-" lspServers += [#{
-call add(lspServers, #{
-  \ name: 'emmet',
-  \ filetype: 'html',
-  \ path: '/Users/yolk/.nvm/versions/node/v21.6.1/bin/emmet-language-server',
-  \ args: ['--stdio'],
-  \})
-  " \}]
+
+" All settings are specific to running on Mac with brew installations in most
+" cases
+
+if uname == 'Darwin'
+  " LaTeX
+  call add(lspServers, #{
+        \ name: 'texlab',
+        \ filetype: ['tex'],
+        \ path: '/opt/homebrew/bin/texlab',
+        \ args: [],
+        \ })
+
+  " Lua
+  call add(lspServers, #{
+        \ name: 'luals',
+        \ filetype: 'lua',
+        \ path: '/opt/homebrew/bin/lua-language-server',
+        \ args: [],
+        \ workspaceConfig: #{
+        \   Lua: #{
+        \     hint: #{
+        \       enable: v:true,
+        \     }
+        \   }
+        \ },
+        \ })
+
+  " Rust
+  call add(lspServers, #{
+        \ name: 'rustanalyzer',
+        \ filetype: ['rust'],
+        \ path: '/opt/homebrew/bin/rust-analyzer',
+        \ args: [],
+        \ syncInit: v:true,
+        \ initializationOptions: #{
+        \   inlayHints: #{
+        \     typeHints: #{
+        \       enable: v:true
+        \     },
+        \     parameterHints: #{
+        \       enable: v:true
+        \     }
+        \   },
+        \ },
+        \ })
+
+  " Terraform
+  call add(lspServers, #{
+        \ name: 'terraform-ls',
+        \ path: '/opt/homebrew/bin/terraform-ls',
+        \ args: ['serve'],
+        \ filetype: ['terraform', 'terraform-vars', 'tf', 'hcl'],
+        \ })
+
+  " bash
+  call add(lspServers, #{
+    \ name: 'bashls',
+    \ filetype: ['sh', 'bash'],
+    \ path: '/Users/yolk/.nvm/versions/node/v21.6.1/bin/bash-language-server',
+    \ args: ['start'],
+    \ })
+
+  " TOML
+  call add(lspServers, #{
+        \ name: 'taplo',
+        \ filetype: ['toml'],
+        \ path: '/opt/homebrew/bin/taplo',
+        \ args: ['lsp', 'stdio'],
+        \ })
+
+  " YAML
+  call add(lspServers, #{
+        \ name: 'yamlls',
+        \ filetype: ['yaml', 'yml'],
+        \ path: '/Users/yolk/.nvm/versions/node/v21.6.1/bin/yaml-language-server',
+        \ args: ['--stdio'],
+        \ })
+
+  " Dockerfile
+  call add(lspServers, #{
+        \ name: 'dockerls',
+        \ filetype: ['dockerfile'],
+        \ path: '/Users/yolk/.nvm/versions/node/v21.6.1/bin/docker-langserver',
+        \ args: ['--stdio'],
+        \ })
+
+  " vim
+  call add(lspServers, #{
+        \ name: 'vimls',
+        \ filetype: 'vim',
+        \ path: '/Users/yolk/.nvm/versions/node/v21.6.1/bin/vim-language-server',
+        \ args: ['--stdio'],
+        \ })
+
+  " Markdown
+  call add(lspServers, #{
+        \ name: 'marksman',
+        \ filetype: ['markdown'],
+        \ path: '/opt/homebrew/bin/marksman',
+        \ args: ['server'],
+        \ })
+
+  " emmet
+  call add(lspServers, #{
+    \ name: 'emmet',
+    \ filetype: 'html',
+    \ path: '/Users/yolk/.nvm/versions/node/v21.6.1/bin/emmet-language-server',
+    \ args: ['--stdio'],
+    \})
+
+  " HTML
+  call add(lspServers, #{
+        \ name: 'vscode-html-server',
+        \ filetype: ['html'],
+        \ path: '/Users/yolk/.nvm/versions/node/v21.6.1/bin/vscode-html-language-server',
+        \ args: ['--stdio'],
+        \ })
+
+  " CSS
+  call add(lspServers, #{
+        \ name: 'vscode-css-server',
+        \ filetype: ['css'],
+        \ path: '/Users/yolk/.nvm/versions/node/v21.6.1/bin/vscode-css-language-server',
+        \ args: ['--stdio'],
+        \ })
+
+  " JavaScript, Typescript
+  call add(lspServers, #{
+        \ name: 'tsserver',
+        \ filetype: ['javascript', 'javascript.jsx', 'javascriptreact', 'typescript'],
+        \ path: '/Users/yolk/.nvm/versions/node/v21.6.1/bin/typescript-language-server',
+        \ args: ['--stdio'],
+        \ })
+
+  " JSON
+  call add(lspServers, #{
+        \ name: 'vscode-json-server',
+        \ filetype: ['json'],
+        \ path: '/Users/yolk/.nvm/versions/node/v21.6.1/bin/vscode-json-language-server',
+        \ args: ['--stdio'],
+        \ })
+
+  " TODO: figure a way to toggle between either pylsp or pyright-langserver
+  " Python
+  " let lspServers = [#{
+  " 	\	name: 'pylsp',
+  " 	\	filetype: 'python',
+  " 	\	path: '/Users/yolk/.pyenv/shims/pylsp',
+  " 	\	args: []
+  " 	\	},
+  "   \ #{
+  call add(lspServers, #{
+    \	name: 'pyright',
+    \	filetype: 'python',
+    \	path: '/Users/yolk/.nvm/versions/node/v21.6.1/bin/pyright-langserver',
+    \	args: ['--stdio'],
+    \	workspaceConfig: #{
+    \	python:	#{
+    \		pythonPath: '/Users/yolk/.pyenv/shims/python'
+    \	}}
+    \	})
+    " \	}]
+endif
+
+autocmd VimEnter * call LspOptionsSet(lspOpts)
 autocmd VimEnter * call LspAddServer(lspServers)
 
 nnoremap <leader>d :LspPeekDefinition<CR>
