@@ -1,6 +1,8 @@
 set nocompatible              "be iMproved
 set encoding=utf-8
 set fileencoding=utf-8
+let uname = substitute(system('uname'), '\n', '', '')
+" Example values: Linux, Darwin, MINGW64_NT-10.0,...
 
 call plug#begin('~/.vim/plugged')
 
