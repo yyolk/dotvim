@@ -139,7 +139,7 @@ Plug 'psf/black', { 'branch': 'stable' }
 "
 " Seems weird...
 " Plug 'vim-scripts/project.tar.gz'
-Plug 'cespare/vim-toml'
+" Plug 'cespare/vim-toml'
 
 Plug 'yegappan/lsp'
 
