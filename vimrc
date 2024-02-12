@@ -103,7 +103,7 @@ Plug 'wakatime/vim-wakatime'
 "
 " Hashicorp tools
 " Plug 'hashivim/vim-consul'
-" Plug 'hashivim/vim-terraform'
+Plug 'hashivim/vim-terraform'
 " Plug 'hashivim/vim-packer'
 " Ansible
 " Plug 'pearofducks/ansible-vim'
