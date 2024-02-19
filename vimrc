@@ -562,15 +562,80 @@ if uname == 'Darwin'
     \		pythonPath: '/Users/yolk/.pyenv/shims/python'
     \	}}
     \	})
-    " \	}]
 endif
 
-autocmd VimEnter * call LspOptionsSet(lspOpts)
-autocmd VimEnter * call LspAddServer(lspServers)
+" autocmd VimEnter * call LspOptionsSet(lspOpts)
+" autocmd VimEnter * call LspAddServer(lspServers)
+autocmd User LspSetup call LspOptionsSet(lspOpts)
+autocmd User LspSetup call LspAddServer(lspServers)
 
+" act on lsp attach to configure LSP server options
+" function! TestAttach()
+"   echo '...'
+" endfunction
+"
+" autocmd User LspAttached call TestAttach()
+" Mappings
+"
+" global mappings
+"
+" T-Comment improved shortcut, we do want recursive
+map <leader>c <c-_><c-_>
+" reload vimrc
+nnoremap <leader>,v :source $MYVIMRC<CR>
+" tabs
+nnoremap <Tab> gt
+nnoremap <S-Tab> gT
+" wait for tabnew
+nnoremap <leader><Tab> :tabnew<Space>
+" write shortcut
+nnoremap <leader>w :w<CR>
+" nnoremap <C-s> :LspShowSignature<CR>
+nnoremap <C-S> :w<CR>
+" a save as shortcut, open up command with current filename expanded
+nnoremap <C-S>s :w <C-R>%
+" copy filename to clipboard
+nnoremap yf :let @+=expand('%')<CR>
+
+" <D-...> " command-key (Mac) / super (GTK)
+" nnoremap <D-w> :close<CR>
+
+" localleader mappings (FT-specific)
+"
+"
+
+" yegappan/lsp mappings
 nnoremap <leader>d :LspPeekDefinition<CR>
 nnoremap <leader>D :LspGotoDefinition<CR>
 nnoremap <leader>o :LspOutline<CR>
+nnoremap <leader>s :LspDiag show<CR>
 nnoremap <leader>h :LspDiag here<CR>
-nnoremap <leader>H :LspHover<CR>
+nnoremap <leader>n :LspDiag next<CR>
+nnoremap <leader>p :LspDiag prev<CR>
+nnoremap <leader>$ :LspDiag first<CR>
+" TODO: update lspdiag prefix, maybe peek too
+nnoremap <leader>u :LspDiag current<CR>
+nnoremap <leader>t :LspPeekTypeDef<CR>
 nnoremap <leader>T :LspGotoTypeDef<CR>
+" nnoremap <leader>Th :LspSubTypeHiearchy<CR>
+" nnoremap <leader>th :LspSuperTypeHierarchy<CR>
+nnoremap <leader>i :LspPeekImpl<CR>
+nnoremap <leader>I :LspGotoImpl<CR>
+nnoremap <leader>r :LspPeekReferences<CR>
+nnoremap <leader>R :LspShowReferences<CR>
+nnoremap <leader><F2> :LspRename<CR>
+nnoremap <leader>z :LspFold<CR>
+" nnoremap <leader>S :LspSymbolSearch<CR>
+nnoremap <leader>y :LspDocumentSymbol<CR>
+nnoremap g= :LspFormat<CR>
+" nnoremap <leader>H :LspHover<CR>
+" nnoremap <C-h> :LspShowSignature<CR>
+nnoremap <C-h> :LspHover<CR>
+" warning - software flow control binding
+" nnoremap <C-s> :LspShowSignature<CR>
+nnoremap <leader>S :LspShowSignature<CR>
+"folding
+"Here is an alternative procedure: In normal mode, press Space to toggle the current fold open/closed.
+"However, if the cursor is not in a fold, move to the right (the default behavior). In addition, with the manual fold method, you can create a fold by visually selecting some lines, then pressing Space.
+nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
+vnoremap <Space> zf
