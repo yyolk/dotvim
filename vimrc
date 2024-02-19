@@ -310,9 +310,6 @@ nnoremap <C-f> :NERDTreeFind<CR>
 " let g:user_emmet_mode='inv'  "enable all functions, which is equal to
 " let g:user_emmet_mode='a'    "enable all function in all mode.
 
-"Faster shortcut for commenting. Requires T-Comment
-map <leader>c <c-_><c-_>
-
 " inoremap \"<Space>    \""<Left>
 " inoremap '<Space>    ''<Left>
 " autowrite on focus lost
@@ -354,8 +351,6 @@ map <leader>c <c-_><c-_>
 " endif
 
 "nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
-"set relativenumber
-set number
 " Clipboard stuffs to revisit
 ""set clipboard=unnamed "share system clipboard
 " nmap <F1> :set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
@@ -373,12 +368,6 @@ set number
 " let g:terraform_remap_spacebar=1
 
 
-"folding
-"Here is an alternative procedure: In normal mode, press Space to toggle the current fold open/closed. 
-"However, if the cursor is not in a fold, move to the right (the default behavior). In addition, with the manual fold method, you can create a fold by visually selecting some lines, then pressing Space.
-
-nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
-vnoremap <Space> zf
 
 "vim-easy-align mappings
 " Start interactive EasyAlign in visual mode (e.g. vipga)
