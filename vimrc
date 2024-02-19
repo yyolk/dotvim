@@ -111,7 +111,7 @@ Plug 'terryma/vim-multiple-cursors'
 " Wakatime
 Plug 'wakatime/vim-wakatime'
 
-" Plug 'severin-lemaignan/vim-minimap', { 'on': 'Minimap' } 
+" Plug 'severin-lemaignan/vim-minimap', { 'on': 'Minimap' }
 " Plug 'derekwyatt/vim-scala'
 " Plug 'fatih/vim-go'
 "Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all' }
