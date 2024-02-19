@@ -470,6 +470,14 @@ if uname == 'Darwin'
         \ filetype: ['yaml', 'yml'],
         \ path: '/Users/yolk/.nvm/versions/node/v21.6.1/bin/yaml-language-server',
         \ args: ['--stdio'],
+        \ workspaceConfig: {
+        \   'yaml': {
+        \    'schemas': {
+        \      'https://json.schemastore.org/github-workflow.json': '/.github/workflows/*.yml',
+        \      'https://json.schemastore.org/github-action.json': '/.github/actions/**/*.yml',
+        \    },
+        \   }
+        \ },
         \ })
 
   " Dockerfile
