@@ -1,6 +1,13 @@
-set nocompatible              "be iMproved
+"be iMproved
+
+set nocompatible
+
+"Encoding
 set encoding=utf-8
 set fileencoding=utf-8
+set termencoding=utf-8
+
+" Used in conditionals for toggling paths for lsp, OS specific features
 let uname = substitute(system('uname'), '\n', '', '')
 " Example values: Linux, Darwin, MINGW64_NT-10.0,...
 
