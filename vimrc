@@ -41,16 +41,20 @@ Plug 'tpope/vim-fugitive'
 "Plug 'digitaltoad/vim-jade'
 " Plug 'hallison/vim-markdown'
 
-" Tab shit 
-" Plug 'godlygeek/tabular' 
+" Tab shit
+" Plug 'godlygeek/tabular'
 
 " LSP makes obsolete
 " Plug 'plasticboy/vim-markdown'
 
+" Markdown Preview
+" i don't like having to install shit blindly with npx
+" Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
+
+
 " I use this all the time
 Plug 'tpope/vim-surround'
 
-"Plug 'molokai'
 
 " Probably don't need
 " Plug 'mkitt/browser-refresh.vim'
@@ -59,15 +63,15 @@ Plug 'tpope/vim-surround'
 Plug 'preservim/nerdtree' |
   \ Plug 'Xuyuanp/nerdtree-git-plugin' |
   \ Plug 'ryanoasis/vim-devicons'
+" The same as above, but don't load vim-devicons
 " Plug 'preservim/nerdtree' |
 "   \ Plug 'Xuyuanp/nerdtree-git-plugin'
-" On-demand loading
+
+" On-demand loading with Plug
 " Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 " Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle'}
 " Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 
-" Nerdfont / VimDevIcons
-" Plug 'ryanoasis/vim-devicons'
 
 "Plug 'Lokaltog/vim-powerline'
 " Plug 'itchyny/lightline.vim'
