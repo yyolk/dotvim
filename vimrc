@@ -379,10 +379,19 @@ nnoremap <C-f> :NERDTreeFind<CR>
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
+" Black format before saving
+autocmd BufWritePre *.py Black
 
 " LSP Servers and config
+" # vim9script
+" # def PythonAttach(client, buffnr)
+" function! PythonAttach(clientm
+" endfunction
+"
 " this is a placeholder, as this is the same as the default option
-let lspOpts = #{autoHighlightDiags: v:true}
+let lspOpts = #{autoHighlightDiags: v:true,
+      \ useQuickfixForLocations: v:false,
+      \ }
 let lspServers = []
 
 " All settings are specific to running on Mac with brew installations in most
