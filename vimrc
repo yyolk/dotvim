@@ -199,14 +199,18 @@ set tw=79
 "    \ set autoindent
 "    \ set fileformat=unix
 
-" 
+"
 " many thanks Steven K :)
 "give me a login
 " set shell=bash
 
-"crosshairs
+" Crosshairs
 set cursorline
 set cursorcolumn
+" Line Numbering
+" set relativenumber
+set number
+
 
 " "wildmenu
 " set wildmenu "enable ctrl-n and ctrl-p to scroll thru matches
