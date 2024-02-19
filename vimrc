@@ -292,6 +292,7 @@ set guioptions-=T
 nnoremap <leader>N :NERDTreeFocus<CR>
 " nnoremap <C-n> :NERDTree<CR>
 " nnoremap <C-t> :NERDTreeToggle<CR>
+" nnoremap <Leader>Nt :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
 " " CtrlP
