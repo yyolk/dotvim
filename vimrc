@@ -166,8 +166,17 @@ Plug 'yegappan/lsp'
 " Plug 'chr4/nginx.vim'
 " Plug 'hjson/vim-hjson'
 call plug#end()
+
+
+setlocal spell spelllang=en_us
+"set spell to off by default
+"autocmd FileType yaml setlocal nospell
+set nospell
+"set spell on when editing markdown
+autocmd FileType markdown setlocal spell
+
 " I don't use snipmgr anymore
-" "Automatically executes filetype plugin indent on and syntax enable. 
+" "Automatically executes filetype plugin indent on and syntax enable.
 " "You can revert the settings after the call. e.g. filetype indent off, syntax off, etc.
 " let g:snipmgr_snippets_dir = $HOME."/.vim/snippets"
 
