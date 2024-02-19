@@ -546,13 +546,12 @@ if uname == 'Darwin'
 
   " TODO: figure a way to toggle between either pylsp or pyright-langserver
   " Python
-  " let lspServers = [#{
-  " 	\	name: 'pylsp',
-  " 	\	filetype: 'python',
-  " 	\	path: '/Users/yolk/.pyenv/shims/pylsp',
-  " 	\	args: []
-  " 	\	},
-  "   \ #{
+  " call add(lspServers, #{
+  "       \ name: 'pylsp',
+  "       \ filetype: 'python',
+  "       \ path: '/Users/yolk/.pyenv/shims/pylsp',
+  "       \ args: [],
+  "       \ })
   call add(lspServers, #{
     \	name: 'pyright',
     \	filetype: 'python',
