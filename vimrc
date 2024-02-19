@@ -243,27 +243,44 @@ set number
 "
 
 " let g:jedi#force_py_version=3
-
 "colorscheme molokai
-" My preffered colorscheme
-color jellybeans
+"
+" * My preffered colorscheme *
+" set notermguicolors
+" colorscheme jellybeans
+"
+" colorscheme welpe
+" colorscheme jgg
+" colorscheme candyman
+" colorscheme hybrid
+set termguicolors
+colorscheme cyberpunk
+" colorscheme silverhand
+
+" MacOS Terminal only supports xterm-256
+if $TERM_PROGRAM == "Apple_Terminal"
+    " if the conditional was inversed
+    " set termguicolors
+    set notermguicolors
+    colorscheme jellybeans
+endif
 
 set colorcolumn=80
 "highlight ColorColumn ctermbg=8
+" highlight ColorColumn ctermbg=234 guibg=#eaeaea
 "highlight ColorColumn ctermbg=234 guibg=#262626
-highlight ColorColumn ctermbg=234 guibg=#eaeaea
+" Good for jellybeans
+highlight ColorColumn ctermbg=234 guibg=#262626
+" highlight ColorColumn ctermbg=234 guibg=#eaeaea
+" Kinda works for candyman
+" highlight ColorColumn ctermbg=233 guibg=#262626
+" highlight ColorColumn ctermbg=239 guibg=#262626
 
 
-"Hide MacVim toolbar by default
-set go-=T
-"set ofu=syntaxcomplete#Complete
-
-setlocal spell spelllang=en_us
-"set spell to off by default
-"autocmd FileType yaml setlocal nospell
-set nospell
-"set spell on when editing markdown
-autocmd FileType markdown setlocal spell
+"Hide gui (MacVim) toolbar by default
+set guioptions-=T
+"Hide gui (MacVim) menu bar by default
+"set guioptions-=m
 
 " NERDTree
 " nmap <leader>N :NERDTreeToggle<CR>
