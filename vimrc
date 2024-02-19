@@ -92,6 +92,13 @@ Plug 'vim-airline/vim-airline'
 
 " My preffered colorscheme
 Plug 'nanotech/jellybeans.vim'
+Plug 'tstelzer/welpe.vim'
+Plug 'goirijo/vim-jgg-colorscheme'
+Plug 'vim-scripts/candyman.vim'
+Plug 'w0ng/vim-hybrid'
+" Plug 'JoydeepMallick/My-vim-themes-and-vimrc', {'
+Plug 'thedenisnikulin/vim-cyberpunk'
+
 
 " Editorconfig is awesome
 Plug 'editorconfig/editorconfig-vim'
