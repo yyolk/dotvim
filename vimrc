@@ -13,6 +13,8 @@ let uname = substitute(system('uname'), '\n', '', '')
 
 call plug#begin('~/.vim/plugged')
 
+" Add common programming wordlists to my spell check list
+Plug 'psliwka/vim-dirtytalk', { 'do': ':DirtytalkUpdate' }
 
 " Probably not needed with LSP
 " Smart auto-indentation for Python
