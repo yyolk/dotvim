@@ -165,11 +165,40 @@ Plug 'psf/black', { 'branch': 'stable' }
 " Plug 'vim-scripts/project.tar.gz'
 " Plug 'cespare/vim-toml'
 
+" Vim9 + Vim9 Script LSP Server - I like it!
 Plug 'yegappan/lsp'
+
+" dispatch.vim - 'asynchronous builds'
+Plug 'tpope/vim-dispatch'
+
+" vim-test a full featured, amazing test runner, with dispatch.vim and other
+" support
+Plug 'vim-test/vim-test'
 
 " Probably obsolete
 " Plug 'chr4/nginx.vim'
 " Plug 'hjson/vim-hjson'
+
+
+" Markdown previews rendered in the desktop browser
+" If you don't have nodejs and yarn
+" use pre build, add 'vim-plug' to the filetype list so vim-plug can update this plugin
+" see: https://github.com/iamcco/markdown-preview.nvim/issues/50
+" Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+"
+" If you have nodejs
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
+"
+" END/markdown-preview
+
+" Highlight current code block
+Plug 'junegunn/limelight.vim'
+" Distraction-free writing
+Plug 'junegunn/goyo.vim'
+
+" Scratch window
+Plug 'mtth/scratch.vim'
+
 call plug#end()
 
 
@@ -193,7 +222,8 @@ set shiftwidth=4
 set showmatch
 set expandtab
 
-set tw=79
+" set tw
+set textwidth=79
 """ from: https://realpython.com/vim-and-python-a-match-made-in-heaven/
 "au BufNewFile,BufRead *.py
 "    \ set tabstop=4
@@ -270,7 +300,10 @@ if $TERM_PROGRAM == "Apple_Terminal"
     colorscheme jellybeans
 endif
 
-set colorcolumn=80
+" Color Column - useful for the 80 character width I normally default to
+" set colorcolumn=80
+" text-width should be overwritten by editor-config's max_line_length
+set colorcolumn=+1
 "highlight ColorColumn ctermbg=8
 " highlight ColorColumn ctermbg=234 guibg=#eaeaea
 "highlight ColorColumn ctermbg=234 guibg=#262626
@@ -281,6 +314,13 @@ highlight ColorColumn ctermbg=234 guibg=#262626
 " highlight ColorColumn ctermbg=233 guibg=#262626
 " highlight ColorColumn ctermbg=239 guibg=#262626
 
+" EditorConfig Settings
+" let g:EditorConfig_max_line_indicator = 'line'
+" EditorConfig Exclude Patterns
+" Ensure EditorConfig works well with tpope/fugitive
+" Ensure EditorConfig doesn't load for any files over ssh
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+
 
 "Hide gui (MacVim) toolbar by default
 set guioptions-=T
@@ -290,7 +330,7 @@ set guioptions-=T
 " NERDTree
 " nmap <leader>N :NERDTreeToggle<CR>
 " let NERDTreeHighlightCursorline=1
-" let NERDTreeIgnore = ['.yardoc', 'pkg', '__pycache__', '.ipython']
+let NERDTreeIgnore = ['.yardoc', 'pkg', '__pycache__', '.ipython']
 " NERDTree-git show ignored files"
 " let g:NERDTreeShowIgnoredStatus = 1
 " NERDTree 2024
@@ -383,9 +423,6 @@ nnoremap <C-f> :NERDTreeFind<CR>
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
-
-" Black format before saving
-autocmd BufWritePre *.py Black
 
 " LSP Servers and config
 " # vim9script
@@ -551,22 +588,62 @@ if uname == 'Darwin'
 
   " TODO: figure a way to toggle between either pylsp or pyright-langserver
   " Python
+  " pylsp
   " call add(lspServers, #{
   "       \ name: 'pylsp',
   "       \ filetype: 'python',
   "       \ path: '/Users/yolk/.pyenv/shims/pylsp',
   "       \ args: [],
   "       \ })
+  " pyright
+  " call add(lspServers, #{
+  "   \	name: 'pyright',
+  "   \	filetype: 'python',
+  "   \	path: '/Users/yolk/.nvm/versions/node/v21.6.1/bin/pyright-langserver',
+  "   \	args: ['--stdio'],
+  "   \	workspaceConfig: #{
+  "   \	python:	#{
+  "   \		pythonPath: '/Users/yolk/.pyenv/shims/python'
+  "   \	}}
+  "   \	})
+  " ruff-lsp
+  " call add(lspServers, #{
+  "       \ name: 'ruff-lsp',
+  "       \ filetype: 'python',
+  "       \ path: expand('$HOME/.local/bin/ruff-lsp'),
+  "       \ args: [],
+  "       \ })
+  " pyright + ruff
+  " use pyright for for dialogs, ruff for linting, formating and organizing
+  " imports
   call add(lspServers, #{
     \	name: 'pyright',
     \	filetype: 'python',
     \	path: '/Users/yolk/.nvm/versions/node/v21.6.1/bin/pyright-langserver',
     \	args: ['--stdio'],
     \	workspaceConfig: #{
-    \	python:	#{
-    \		pythonPath: '/Users/yolk/.pyenv/shims/python'
-    \	}}
+    \   pyright: #{
+    \     disableOrganizeImports: v:true,
+    \   },
+    \	  python:	#{
+    \	  	pythonPath: '/Users/yolk/.pyenv/shims/python',
+    \     analysis: #{
+    \       ignore: ['*'],
+    \     },
+    \	  }}
     \	})
+  " ruff-lsp
+  call add(lspServers, #{
+        \ name: 'ruff-lsp',
+        \ filetype: 'python',
+        \ path: expand('$HOME/.local/bin/ruff-lsp'),
+        \ workspaceConfig: #{
+        \   server_capabilities: #{
+        \      hoverProvider: v:false,
+        \   },
+        \ },
+        \ args: [],
+        \ })
 endif
 
 " autocmd VimEnter * call LspOptionsSet(lspOpts)
@@ -632,6 +709,7 @@ nnoremap <leader><F2> :LspRename<CR>
 nnoremap <leader>z :LspFold<CR>
 " nnoremap <leader>S :LspSymbolSearch<CR>
 nnoremap <leader>y :LspDocumentSymbol<CR>
+" I like this
 nnoremap g= :LspFormat<CR>
 " nnoremap <leader>H :LspHover<CR>
 " nnoremap <C-h> :LspShowSignature<CR>
@@ -644,3 +722,24 @@ nnoremap <leader>S :LspShowSignature<CR>
 "However, if the cursor is not in a fold, move to the right (the default behavior). In addition, with the manual fold method, you can create a fold by visually selecting some lines, then pressing Space.
 nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
 vnoremap <Space> zf
+
+
+" vim-test/vim-test config
+"
+" Suggested keymaps for vim-test/vim-test
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>T :TestFile<CR>
+nmap <silent> <leader>a :TestSuite<CR>
+nmap <silent> <leader>l :TestLast<CR>
+nmap <silent> <leader>g :TestVisit<CR>
+
+" vim-test strategy
+" let test#strategy = 'dispatch'
+
+"
+" Auto Commands - Post Lsp Setup seems like an appropriate spot.
+"
+" Black format before saving
+" autocmd BufWritePre *.py Black
+" ruff format through ruff-lsp before saving
+autocmd BufWritePre *.py LspFormat
