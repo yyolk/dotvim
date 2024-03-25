@@ -58,6 +58,7 @@ Plug 'tpope/vim-rhubarb'
 
 " I use this all the time
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 
 
 " Probably don't need
