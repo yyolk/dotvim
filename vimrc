@@ -22,6 +22,8 @@ Plug 'psliwka/vim-dirtytalk', { 'do': ':DirtytalkUpdate' }
 
 " Git plugin
 Plug 'tpope/vim-fugitive'
+" Fugitive GBrowse GitHub support
+Plug 'tpope/vim-rhubarb'
 
 " Auto-completing engine
 " is terrible
